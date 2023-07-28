@@ -26,5 +26,11 @@ pipeline {
                 git branch: 'main', credentialsId: 'git-repo', url: 'git@github.com:Rocklobster84/jenkins-chef-repo.git'
             }
         }
+        stage('Install Kithen Docker Gem') {
+            steps {
+                sh 'sudo apt-get install -y make gcc'
+                sh 'sudo chef gem install kitchen-docker'
+            }
+        }
     }
 }
