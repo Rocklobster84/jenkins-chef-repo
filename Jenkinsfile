@@ -21,9 +21,9 @@ pipeline {
             }
         }
     }
-        stage('Third Stage') {
+        stage('Download Apache Cookbook') {
             steps {
-                echo "Third stage"
+                git branch: 'main', credentialsId: 'git-repo', url: 'git@github.com:Rocklobster84/jenkins-chef-repo.git'
             }
         }
     }
